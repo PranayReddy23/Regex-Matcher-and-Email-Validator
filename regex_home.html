@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='regex_styling.css') }}">
+    <title>Regex Tester</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Regex Matcher</h2>
+        <form action='/' method="post">
+            <label for="pattern">Enter Pattern:</label><br />
+            <input type="text" id="pattern" name="pattern" class="input-field" required=""><br />
+            <br />
+            <label for="string">Enter Text to match:</label><br />
+            <textarea id="string" name="string" class="input-area" required="s"></textarea><br />
+            <br />
+            <input type="submit" value="Match" class="submit-btn">
+        </form>
+
+        {% if match %}
+            <h3>Match Found: {{ match }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>

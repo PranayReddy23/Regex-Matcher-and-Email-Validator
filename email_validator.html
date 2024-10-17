@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='email_styling.css') }}">
+    <title>Email Validator</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Email Validator</h2>
+        <form action="/email_validator" method="post">
+            <label for="email">Enter Email to Validate:</label><br>
+            <input type="text" id="email" name="email_address" class="input-field"><br><br>
+            <input type="submit" value="Validate" class="submit-btn">
+        </form>
+
+        {% if match %}
+            <h3>{{ match }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
